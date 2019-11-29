@@ -13,9 +13,9 @@ package week10;
 public abstract class Vehicle {
 
     protected String registrationNumber;
-    protected double weight;
+    protected int  weight;
 
-    public Vehicle(String registrationIn, double weightIn) {
+    public Vehicle(String registrationIn, int weightIn) {
         registrationIn = registrationNumber;
         weightIn = weight;
     }
@@ -26,7 +26,7 @@ public abstract class Vehicle {
         return registrationNumber;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 

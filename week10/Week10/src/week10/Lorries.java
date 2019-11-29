@@ -11,16 +11,16 @@ package week10;
  */
 public class Lorries extends Vehicle {
     
-    public Lorries(String registrationIn, double weightIn) {
+    public Lorries(String registrationIn, int weightIn) {
         super(registrationIn, weightIn);
     }
     
     @Override
     public double calculateFee() {
-        double fee = 10;
-        double cost=0;
-        cost= weight*fee;
-        return cost;
+        if(weight>8000){
+            return 15.0;
+        }
+        return 10.0;
     }
 
     
