@@ -16,14 +16,14 @@ import week10.Vehicle;
 public class Car extends Vehicle {
     
   
-    public Car(int registrationIn, int weightIn) {
+    public Car(String registrationIn, double weightIn) {
         super(registrationIn, weightIn);
     }
     
     @Override
-    public int calculateFee() {
-        int fee = 5;
-        int cost=0;
+    public double calculateFee() {
+        double fee = 5;
+        double cost=0;
         cost= weight*fee;
         return cost;
     }

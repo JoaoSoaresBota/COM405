@@ -11,8 +11,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
-public class MainScreen extends JFrame {
+public class MainScreen extends JFrame implements ActionListener {
 
     private GridBagConstraints constraints;
     private JLabel lblTitle;
@@ -25,6 +28,8 @@ public class MainScreen extends JFrame {
     private JButton btnAdd;
     private JButton btnRemove;
     private JButton btnCalculate;
+
+    private Bridge bridge;
 
     public MainScreen() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,4 +80,26 @@ public class MainScreen extends JFrame {
         this.add(btnRemove, constraints);
     }
 
+    public void actionPerformed(ActionEvent ev) {
+        if (ev.getSource().equals(btnAdd)) {
+            String id = txtRegistration.getText();
+            String weightStr = txtWeight.getText();
+            double weight=0;
+            try{
+            weight = Double.parseDouble(weightStr);
+            }catch(Exception ex){
+                System.out.println("cannot parse double"+weight);
+            }
+
+
+            boolean added = bridge.addVehicle(new Car(id, weight));
+            if (added) {
+                JOptionPane.showMessageDialog(null, "Vehicle has been added");
+            } else {
+                JOptionPane.showMessageDialog(null, "The Bridge is full");
+            }
+        }
+    }
+
 }
+

@@ -12,17 +12,17 @@ package week10;
  */
 public abstract class Vehicle {
 
-    protected int registrationNumber;
-    protected int weight;
+    protected String registrationNumber;
+    protected double weight;
 
-    public Vehicle(int registrationIn, int weightIn) {
+    public Vehicle(String registrationIn, double weightIn) {
         registrationIn = registrationNumber;
         weightIn = weight;
     }
 
-    public abstract int calculateFee();
+    public abstract double calculateFee();
 
-    public int getRegistrationNumber() {
+    public String getRegistrationNumber() {
         return registrationNumber;
     }
 
